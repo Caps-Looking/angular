@@ -34,7 +34,7 @@ let ContatoService = class ContatoService {
             .toPromise().then(() => contato)
             .catch(this.handleError);
     }
-    getContatos() {
+    findAll() {
         return this.http.get(this.contatosUrl).toPromise()
             .then(response => response.json().data)
             .catch(this.handleError);
@@ -42,8 +42,8 @@ let ContatoService = class ContatoService {
     handleError(err) {
         return Promise.reject(err.message || err);
     }
-    getContato(id) {
-        return this.getContatos()
+    find(id) {
+        return this.findAll()
             .then((contatos) => contatos.find(contato => contato.id === id));
     }
     search(term) {

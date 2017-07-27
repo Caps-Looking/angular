@@ -1,7 +1,9 @@
-import { DialogService } from './dialog.service';
-import { NgModule } from '@angular/core'
+import './util/rxjs-extensions'
 import { BrowserModule } from '@angular/platform-browser'
+import { DialogService } from './dialog.service';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http'
+import { NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +17,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api'
         ContatosModule,
         AppRoutingModule,
         HttpModule,
+        FormsModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService)
     ],
     providers: [
